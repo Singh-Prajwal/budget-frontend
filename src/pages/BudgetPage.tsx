@@ -35,12 +35,15 @@ const BudgetPage = () => {
       const today = new Date();
       const month = today.getMonth() + 1;
       const year = today.getFullYear();
-      const [catRes, budRes] = await Promise.all([
-        apiClient.get<Category[]>('/categories/'),
-        apiClient.get<Budget[]>(`/budgets/?month=${month}&year=${year}`)
-      ]);
-      const budgetsMap = new Map(budRes.data.map(b => [b.category, b.amount]));
-      const combined = catRes.data.map(cat => ({
+      // const [catRes, budRes] = await Promise.all([
+      //   apiClient.get<Category[]>('/categories/'),
+      //   apiClient.get<Budget[]>(`/budgets/?month=${month}&year=${year}`)
+      // ]);
+      const budgets:any = await apiClient.get<any>(`/budgets/?month=${month}&year=${year}`);
+      const categories:any = await apiClient.get<any>('/categories/');
+      
+      const budgetsMap = new Map(budgets.data.results.map((b:any) => [b.category, b.amount]));
+      const combined = categories.data.results.map((cat:any) => ({
         ...cat,
         budgetAmount: budgetsMap.get(cat.id) || ''
       }));
