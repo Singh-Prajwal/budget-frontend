@@ -36,7 +36,7 @@ const TransactionsPage = () => {
       // This is the crucial part: directly set the state with the fetched results.
       // This will ALWAYS trigger a re-render.
       console.log("response",response.data)
-      setTransactions(response.data);
+      setTransactions(response.data.results);
       // setTotalPages(Math.ceil(response.data.length / 10)); // Assuming PAGE_SIZE is 10
     } catch (err) {
       setError('Failed to fetch transactions. Please try again.');
