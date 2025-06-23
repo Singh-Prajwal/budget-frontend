@@ -1,7 +1,7 @@
 // src/pages/BudgetPage.tsx
 import  { useState, useEffect, useCallback } from 'react';
 import apiClient from '../api/apiClient';
-import type { Budget, Category } from '../types';
+import type { Category } from '../types';
 import Spinner from '../components/ui/Spinner';
 import styles from './BudgetPage.module.css';
 import AddBudgetModal from '../components/budget/AddBudgetModal';
