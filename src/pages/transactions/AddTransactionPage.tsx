@@ -26,7 +26,7 @@ const AddTransactionPage = () => {
     setLoading(true);
     apiClient.get<Category[]>('/categories/')
       .then(res => {
-        setCategories(res.data);
+        setCategories(res.data.results);
       })
       .catch(() => {
         setError('Could not load categories. Please add a category in the Budget Settings first.');
