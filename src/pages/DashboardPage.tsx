@@ -1,5 +1,5 @@
 // src/pages/DashboardPage.tsx
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import apiClient from '../api/apiClient';
 import type { FinancialSummary } from '../types';
 import { formatCurrency } from '../utils/formatters';

@@ -1,5 +1,4 @@
 // src/components/dashboard/BudgetProgressBar.tsx
-import React from 'react';
 import styles from './BudgetProgressBar.module.css';
 import { formatCurrency } from '../../utils/formatters';
 

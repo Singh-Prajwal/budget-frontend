@@ -1,6 +1,6 @@
 // src/pages/transactions/TransactionsPage.tsx
 
-import React, { useState, useEffect } from 'react'; // We only need useState and useEffect
+import  { useState, useEffect } from 'react'; // We only need useState and useEffect
 import { Link } from 'react-router-dom';
 import apiClient from '../../api/apiClient';
 import type { Transaction } from '../../types';
@@ -9,16 +9,7 @@ import styles from './TransactionsPage.module.css';
 import { Search } from 'lucide-react';
 import { formatCurrency } from '../../utils/formatters';
 
-// Define the shape of the paginated response we expect from the backend
-interface PaginatedTransactionsResponse {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: Transaction[];
-}
-
 const TransactionsPage = () => {
-  // State for data and UI
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -26,8 +17,8 @@ const TransactionsPage = () => {
   // State for filters and pagination
   const [filterType, setFilterType] = useState<'ALL' | 'INCOME' | 'EXPENSE'>('ALL');
   const [searchTerm, setSearchTerm] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [totalPages, setTotalPages] = useState(1);
 
   // --- THE CORE DATA FETCHING LOGIC USING useEffect ---
   const fetchTransactions = async () => {
@@ -35,7 +26,7 @@ const TransactionsPage = () => {
     setError('');
 
     // Construct the URL based on the current state of the filters
-    let url = `/transactions/?page=${currentPage}&search=${searchTerm}`;
+    let url = `/transactions/?page=${1}&search=${searchTerm}`;
     if (filterType !== 'ALL') {
       url += `&type=${filterType}`;
     }
@@ -46,7 +37,7 @@ const TransactionsPage = () => {
       // This will ALWAYS trigger a re-render.
       console.log("response",response.data)
       setTransactions(response.data);
-      setTotalPages(Math.ceil(response.data.length / 10)); // Assuming PAGE_SIZE is 10
+      // setTotalPages(Math.ceil(response.data.length / 10)); // Assuming PAGE_SIZE is 10
     } catch (err) {
       setError('Failed to fetch transactions. Please try again.');
       console.error("Fetch Error:", err);
@@ -72,7 +63,7 @@ const TransactionsPage = () => {
 
   // Dependency Array: This effect will re-run whenever any of these values change.
   // This is what makes the filters and search work automatically.
-  }, [filterType, searchTerm, currentPage]);
+  }, [filterType, searchTerm]);
 
   // Helper function to keep the JSX clean by handling all possible states
   const renderTableBody = () => {

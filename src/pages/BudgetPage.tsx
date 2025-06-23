@@ -1,5 +1,5 @@
 // src/pages/BudgetPage.tsx
-import React, { useState, useEffect, useCallback } from 'react';
+import  { useState, useEffect, useCallback } from 'react';
 import apiClient from '../api/apiClient';
 import type { Budget, Category } from '../types';
 import Spinner from '../components/ui/Spinner';

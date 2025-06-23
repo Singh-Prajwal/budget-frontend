@@ -1,5 +1,5 @@
 // src/components/budget/AddBudgetModal.tsx - FINAL AND CORRECT
-import React, { useState, useEffect, useMemo } from 'react';
+import  { useState, useEffect, useMemo } from 'react';
 import apiClient from '../../api/apiClient';
 import type{ Category, Budget } from '../../types';
 import Spinner from '../ui/Spinner';

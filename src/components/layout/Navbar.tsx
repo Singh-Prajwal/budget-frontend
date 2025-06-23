@@ -1,9 +1,8 @@
 // src/components/layout/Navbar.tsx
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import styles from './Navbar.module.css';
-import { Bell, User } from 'lucide-react'; // A popular icon library
+import {  User } from 'lucide-react'; // A popular icon library
 
 const Navbar = () => {
   const { logout, user } = useAuth();

@@ -1,5 +1,5 @@
 // src/components/charts/DonutChart.tsx
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import type{ ExpenseByCategory } from '../../types';
 import { formatCurrency } from '../../utils/formatters';
@@ -62,7 +62,7 @@ const DonutChart = ({ data, width = 300, height = 300 }: DonutChartProps) => {
       .attr("d", arc)
       .attr("fill", d => color(d.data.category__name))
       .style("cursor", "pointer")
-      .on("mouseover", (event, d) => {
+      .on("mouseover", (event, d:any) => {
         d3.select(event.currentTarget).transition().duration(200).attr("transform", "scale(1.05)");
         const percentage = (d.data.total / d3.sum(data, item => parseFloat(item.total))) * 100;
         tooltip.html(`<strong>${d.data.category__name}</strong><br/>${formatCurrency(d.data.total)} (${percentage.toFixed(1)}%)`)
