@@ -20,20 +20,29 @@ const AddTransactionPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false); // For disabling the button
 
   const navigate = useNavigate();
-
+  const getCategories = async()=> {
+    try {
+      const res = await apiClient.get<any>('/categories/');
+      setCategories(res.data.results);
+    } catch (err) {
+      setError('Could not load categories. Please add a category in the Budget Settings first.');
+    }
+  }
   // --- DATA FETCHING ---
   useEffect(() => {
     setLoading(true);
-    apiClient.get<Category[]>('/categories/')
-      .then(res => {
-        setCategories(res.data.results);
-      })
-      .catch(() => {
-        setError('Could not load categories. Please add a category in the Budget Settings first.');
-      })
-      .finally(() => {
+    getCategories()
         setLoading(false);
-      });
+
+    // apiClient.get<Category[]>('/categories/')
+    //   .then(res => {
+    //     setCategories(res.data);
+    //   })
+    //   .catch(() => {
+    //     setError('Could not load categories. Please add a category in the Budget Settings first.');
+    //   })
+    //   .finally(() => {
+    //   });
   }, []);
 
   // --- FORM SUBMISSION HANDLER ---
