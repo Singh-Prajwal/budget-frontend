@@ -1,0 +1,116 @@
+/* src/pages/DashboardPage.module.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.header p {
+    color: #6b7280;
+}
+
+.summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #f3f4f6;
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.card span {
+    color: #4b5563;
+}
+
+.card h2 {
+    margin: 0.5rem 0 0;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.breakdownContainer {
+    margin-top: 3rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.breakdownContainer h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem;
+}
+
+.breakdownContent {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    /* Fixed width for chart, rest for table */
+    align-items: center;
+    gap: 2rem;
+}
+
+.chartWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableWrapper {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.table td {
+    color: #374151;
+    font-weight: 500;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.noData {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .breakdownContent {
+        grid-template-columns: 1fr;
+        /* Stack chart and table on smaller screens */
+    }
+}

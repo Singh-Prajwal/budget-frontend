@@ -1,0 +1,199 @@
+/* src/pages/transactions/TransactionsPage.module.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.newButton {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.searchBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 12px;
+    color: #9ca3af;
+}
+
+.searchBox input {
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    width: 300px;
+    font-size: 1rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tabs button {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.tabs button.activeTab {
+    background-color: white;
+    color: #111827;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tableContainer {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.table td {
+    color: #374151;
+    font-weight: 500;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.income {
+    color: #16a34a;
+}
+
+.expense {
+    color: #dc2626;
+}
+
+.actionsCell {
+    text-align: right;
+    width: 100px;
+    /* Give it a fixed width */
+}
+
+.actionButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    color: #6b7280;
+    margin-left: 4px;
+}
+
+.actionButton:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.deleteButton:hover {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.pagination button {
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #e5e7eb;
+}
+
+.pagination button:disabled {
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-weight: 500;
+    color: #6b7280;
+}
+
+/* Also, update the table header style for the new Actions column */
+.table th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Make sure the right-aligned headers are handled */
+.table th:last-child,
+.table th:nth-last-child(2) {
+    text-align: start
+}

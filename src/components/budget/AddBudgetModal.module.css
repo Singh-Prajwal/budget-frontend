@@ -1,0 +1,145 @@
+/* src/components/budget/AddBudgetModal.module.css */
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 90vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.body {
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.totalBudget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.totalBudget label {
+    font-weight: 500;
+    color: #374151;
+}
+
+.totalAmount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.body h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+}
+
+.categoryList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.categoryItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemInfo h4 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.itemInfo p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.itemInput {
+    display: flex;
+    align-items: center;
+}
+
+.itemInput span {
+    color: #6b7280;
+    margin-right: 0.25rem;
+}
+
+.itemInput input {
+    border: none;
+    background: none;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 80px;
+}
+
+.itemInput input:focus {
+    outline: none;
+}
+
+.footer {
+    padding: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.saveButton {
+    width: 100%;
+    padding: 0.875rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.saveButton:disabled {
+    background-color: #93c5fd;
+}

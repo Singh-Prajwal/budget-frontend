@@ -1,0 +1,97 @@
+/* src/pages/BudgetPage.module.css */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #6b7280;
+}
+
+.list {
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.list h3 {
+    padding: 1.5rem;
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.item:last-of-type {
+    border-bottom: none;
+}
+
+.itemInfo h4 {
+    margin: 0 0 0.25rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.itemInfo p {
+    margin: 0;
+    color: #6b7280;
+}
+
+.itemInput {
+    display: flex;
+    align-items: center;
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0 0.75rem;
+}
+
+.itemInput span {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.itemInput input {
+    border: none;
+    background: none;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100px;
+    padding: 0.75rem 0 0.75rem 0.5rem;
+}
+
+.itemInput input:focus {
+    outline: none;
+}
+
+.addButton {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    background: none;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    color: #3b82f6;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+}
